@@ -8,16 +8,71 @@
 import SwiftUI
 
 struct QuizView: View {
+    
+    var oxButton: some View {
+        HStack {
+            Button(action: {
+                print("그렇다 클릭")
+            }) {
+            
+                HStack {
+                    Spacer()
+                    VStack{
+                        Image(systemName: "circlebadge")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .padding(.bottom, 8)
+                        
+                        Text("그렇다")
+                            .fontWeight(.bold)
+                            .font(.system(size: 20))
+                    }
+                    .foregroundStyle(Color.blue)
+                    Spacer()
+                }
+                .padding()
+                .foregroundColor(.white)
+                .frame(height: 150)
+                .background(Color.blue.opacity(0.3))
+                .cornerRadius(20)
+            }
+            
+            Button(action: {
+                print("아니다 클릭")
+            }) {
+                HStack {
+                    Spacer()
+                    VStack{
+                        Image(systemName: "xmark")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .padding(.bottom, 14)
+                        
+                        Text("아니다")
+                            .fontWeight(.bold)
+                            .font(.system(size: 20))
+                    }
+                    .foregroundStyle(Color.red)
+                    Spacer()
+                }
+                .padding()
+                .foregroundColor(.white)
+                .frame(height: 150)
+                .background(Color.red.opacity(0.3))
+                .cornerRadius(20)
+            }
+        }
+        .padding(.horizontal, 20)
+        .padding(.bottom, 20)
+    }
+    
+    
     var body: some View {
         ZStack{
             Color(.black)
             VStack {
                 HStack {
-                    Image(systemName: "book")
-                        .resizable()
-                        .frame(width: 55, height: 50)
-                        .foregroundStyle(Color.yellow)
-                        .padding(.leading, 20)
+                    TitleImage(color: Color.yellow, systemName: "book")
                     Spacer()
                 }
                 .padding(.top, 40)
@@ -25,10 +80,8 @@ struct QuizView: View {
                 
                 HStack{
                     Text("등기부등본은 집주인만 발급받을 수 있다?")
-                        .foregroundStyle(Color.white)
-                        .fontWeight(.bold)
-                        .font(.system(size: 24))
-                        .padding(.leading, 20)
+                        .modifier(TitleModifier())
+                    
                     Spacer()
                 }
                 .padding(.bottom, 4)
@@ -43,147 +96,8 @@ struct QuizView: View {
                 }
                 .padding(.bottom, 40)
                 
-                HStack {
-                    Button(action: {
-                        print("그렇다 클릭")
-                    }) {
-                    
-                        HStack {
-                            Spacer()
-                            VStack{
-                                Image(systemName: "circlebadge")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                                    .padding(.bottom, 8)
-                                
-                                Text("그렇다")
-                                    .fontWeight(.bold)
-                                    .font(.system(size: 20))
-                            }
-                            .foregroundStyle(Color.blue)
-                            Spacer()
-                        }
-                        .padding()
-                        .foregroundColor(.white)
-                        .frame(height: 150)
-                        .background(Color.blue.opacity(0.3))
-                        .cornerRadius(20)
-                    }
-                    
-                    Button(action: {
-                        print("아니다 클릭")
-                    }) {
-                        HStack {
-                            Spacer()
-                            VStack{
-                                Image(systemName: "xmark")
-                                    .resizable()
-                                    .frame(width: 40, height: 40)
-                                    .padding(.bottom, 14)
-                                
-                                Text("아니다")
-                                    .fontWeight(.bold)
-                                    .font(.system(size: 20))
-                            }
-                            .foregroundStyle(Color.red)
-                            Spacer()
-                        }
-                        .padding()
-                        .foregroundColor(.white)
-                        .frame(height: 150)
-                        .background(Color.red.opacity(0.3))
-                        .cornerRadius(20)
-                    }
-                }
-                .padding(.horizontal, 20)
-                .padding(.bottom, 20)
-                
-                HStack{
-                    Button(action: {
-                        print("토스뱅크 클릭")
-                    }) {
-                        HStack {
-                            Spacer()
-                            VStack{
-                                Spacer()
-                                Image(systemName: "dollarsign.circle")
-                                    .resizable()
-                                    .frame(width: 35, height: 35)
-                                    .padding(.bottom, 4)
-                                
-                                Text("토스뱅크")
-                                    .fontWeight(.bold)
-                                    .font(.system(size: 17))
-                                Spacer()
-                            }
-                            .foregroundStyle(Color.white)
-                            Spacer()
-                        }
-                        .padding()
-                        .foregroundColor(.white)
-                        .frame(height: 90)
-                        .background(Color.black.opacity(0.4))
-                        .cornerRadius(20)
-                    }
-                    
-                    Button(action: {
-                        print("토스증권 클릭")
-                    }) {
-                        HStack {
-                            Spacer()
-                            VStack{
-                                Spacer()
-                                Image(systemName: "chart.line.uptrend.xyaxis")
-                                    .resizable()
-                                    .frame(width: 30, height: 30)
-                                    .padding(.bottom, 4)
-                                
-                                Text("토스증권")
-                                    .fontWeight(.bold)
-                                    .font(.system(size: 17))
-                                Spacer()
-                            }
-                            .foregroundStyle(Color.white)
-                            Spacer()
-                        }
-                        .padding()
-                        .foregroundColor(.white)
-                        .frame(height: 90)
-                        .background(Color.black.opacity(0.4))
-                        .cornerRadius(20)
-                    }
-                    
-                    Button(action: {
-                        print("고객센터 클릭")
-                    }) {
-                        HStack {
-                            Spacer()
-                            VStack{
-                                Spacer()
-                                Image(systemName: "headphones")
-                                    .resizable()
-                                    .frame(width: 30, height: 30)
-                                    .padding(.bottom, 4)
-                                
-                                Text("고객센터")
-                                    .fontWeight(.bold)
-                                    .font(.system(size: 17))
-                                Spacer()
-                            }
-                            .foregroundStyle(Color.white)
-                            Spacer()
-                        }
-                        .padding()
-                        .foregroundColor(.white)
-                        .frame(height: 90)
-                        .background(Color.black.opacity(0.4))
-                        .cornerRadius(20)
-                    }
-                    
-                }
-                .padding(.horizontal, 20)
-                .padding(.bottom, 20)
-        
+                oxButton
+                OptionView()
             }
             .background(Color.gray.opacity(0.3))
             .cornerRadius(30)

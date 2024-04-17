@@ -8,78 +8,64 @@
 import SwiftUI
 
 struct PointView: View {
+    
+    func pointOption(color: Color, title: String) -> some View {
+        HStack{
+            Image(systemName: "star.fill")
+                .imageScale(.large)
+                .foregroundStyle(color)
+                .padding(.leading, 20)
+            
+            Text(title)
+                .foregroundStyle(Color.white)
+                .fontWeight(.medium)
+                .font(.system(size: 18))
+            
+            Spacer()
+
+        }.padding(.bottom, 24)
+    }
+    
+    func pointButton(color: Color, title: String) -> some View {
+
+        HStack {
+            Spacer()
+            Text(title)
+                .fontWeight(.bold)
+                .font(.system(size: 20))
+            Spacer()
+        }
+        .padding()
+        .foregroundColor(.white)
+        .background(color)
+        .cornerRadius(18)
+
+    }
+    
     var body: some View {
         ZStack {
             Color(.black)
+                .ignoresSafeArea()
             VStack{
-                
                 HStack {
-                    Image(systemName: "suit.heart")
-                        .resizable()
-                        .frame(width: 55, height: 50)
-                        .foregroundStyle(Color.pink)
-                        .padding(.leading, 20)
+                    TitleImage(color: Color.pink, systemName: "suit.heart") 
                     Spacer()
                 }
-                .padding(.bottom, 12)
+                .padding(.vertical, 8)
 
                 HStack{
         
                     Text("포인트를 더 모을 수 있게 맞춤 혜택을 추천해드릴까요?")
-                        .foregroundStyle(Color.white)
-                        .fontWeight(.bold)
-                        .font(.system(size: 24))
-                        .padding(.horizontal, 20)
+                        .modifier(TitleModifier())
+               
                     Spacer()
                 }
                 .padding(.bottom, 40)
 
                 VStack{
-                    HStack{
-                        Image(systemName: "star.fill")
-                            .imageScale(.large)
-                            .foregroundStyle(Color.blue)
-                            .padding(.leading, 20)
-                        
-                        Text("매일 포인트 받는 출석체크 / 퀴즈")
-                            .foregroundStyle(Color.white)
-                            .fontWeight(.medium)
-                            .font(.system(size: 18))
-                        
-                        Spacer()
-
-                    }.padding(.bottom, 24)
-                    
-                    HStack{
-                        Image(systemName: "star.fill")
-                            .imageScale(.large)
-                            .foregroundStyle(Color.red)
-                            .padding(.leading, 20)
-                        
-                        Text("새로운 이벤트")
-                            .foregroundStyle(Color.white)
-                            .fontWeight(.medium)
-                            .font(.system(size: 18))
-                        
-                        Spacer()
-
-                    }
-                    .padding(.bottom, 24)
-                    
-                    HStack{
-                        Image(systemName: "star.fill")
-                            .imageScale(.large)
-                            .foregroundStyle(Color.yellow)
-                            .padding(.leading, 20)
-                        
-                        Text("미션 추천")
-                            .foregroundStyle(Color.white)
-                            .fontWeight(.medium)
-                            .font(.system(size: 18))
-                        
-                        Spacer()
-                    }
-                    .padding(.bottom, 24)
+                    pointOption(color: Color.blue, title: "매일 포인트 받는 출석체크 / 퀴즈")
+                    pointOption(color: Color.red, title: "새로운 이벤트")
+                    pointOption(color: Color.yellow, title: "미션 추천")
                 }
                 
                 Spacer()
@@ -99,46 +85,19 @@ struct PointView: View {
                     Button(action: {
                         print("동의하기 클릭")
                     }) {
-                        Spacer()
-                        HStack {
-                            Spacer()
-                            Text("동의하기")
-                                .fontWeight(.bold)
-                                .font(.system(size: 20))
-                            Spacer()
-                        }
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color.blue)
-                        .cornerRadius(18)
-                        Spacer()
+                        pointButton(color: Color.blue, title: "동의하기")
                     }
-                    
                     Button(action: {
                         print("다음에 하기 클릭")
                     }) {
-                        Spacer()
-                        HStack {
-                            Spacer()
-                            Text("다음에 하기")
-                                .fontWeight(.bold)
-                                .font(.system(size: 20))
-                            Spacer()
-                        }
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color.gray)
-                        .cornerRadius(18)
-                        Spacer()
+                        pointButton(color: Color.gray, title: "다음에 하기")
                     }
                     
                 }
             }
-            .safeAreaPadding(.vertical, 90)
-
-            
+            .safeAreaPadding(.vertical, 10)
         }
-        .ignoresSafeArea()
+
     }
 }
 
