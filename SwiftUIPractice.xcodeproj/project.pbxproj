@@ -19,6 +19,7 @@
 		39353FE22BD18728008AF1D5 /* NetflixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39353FE12BD18728008AF1D5 /* NetflixView.swift */; };
 		39C2E4B32BD5751300885E88 /* MyRandomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C2E4B22BD5751300885E88 /* MyRandomImageView.swift */; };
 		39C2E4B52BD57FE600885E88 /* SelectImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C2E4B42BD57FE600885E88 /* SelectImageView.swift */; };
+		39C2E4B72BD5851B00885E88 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C2E4B62BD5851B00885E88 /* CategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		39353FE12BD18728008AF1D5 /* NetflixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixView.swift; sourceTree = "<group>"; };
 		39C2E4B22BD5751300885E88 /* MyRandomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRandomImageView.swift; sourceTree = "<group>"; };
 		39C2E4B42BD57FE600885E88 /* SelectImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageView.swift; sourceTree = "<group>"; };
+		39C2E4B62BD5851B00885E88 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				39353FE12BD18728008AF1D5 /* NetflixView.swift */,
 				39C2E4B22BD5751300885E88 /* MyRandomImageView.swift */,
 				39C2E4B42BD57FE600885E88 /* SelectImageView.swift */,
+				39C2E4B62BD5851B00885E88 /* CategoryView.swift */,
 			);
 			path = SwiftUIPractice;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				39353F982BCD7041008AF1D5 /* PointView.swift in Sources */,
 				39353FB82BD01E5C008AF1D5 /* TitleImageModifier.swift in Sources */,
 				39353F9A2BCD79E4008AF1D5 /* QuizView.swift in Sources */,
+				39C2E4B72BD5851B00885E88 /* CategoryView.swift in Sources */,
 				39353F8C2BCD6FC2008AF1D5 /* ContentView.swift in Sources */,
 				39353FB62BD01BC9008AF1D5 /* TitleModifier.swift in Sources */,
 				39353F8A2BCD6FC2008AF1D5 /* SwiftUIPracticeApp.swift in Sources */,
